@@ -30,13 +30,25 @@
                 <form action="HomePage.html" method="post">
                    <label for="username"> Brugernavn:</label><br>
                    <input type="text" id="username" name="username" required><br>
-                   <label for="pwd"> Kodeord:</label><br>
-                   <input type="text" id="pwd" name="pwd" required><br><br>
-                    <input id="evasInput" type="submit" value="Login" >
+                   <label for="passwordID"> Kodeord:</label><br>
+                   <input type="password" id="passwordID" name="password" required><br><br>
+                    <input type="checkbox" onclick="passwordFunction()">Vis kodeord<br><br>
+                    <input type="submit" value="Login" >
                  </form>
             </div>
     </div>
 </div>
+
+<script>
+    function passwordFunction() {
+        var x = document.getElementById("passwordID");
+        if (x.type === "password") {
+            x.type = "text";
+        } else {
+            x.type = "password";
+        }
+    }
+</script>
 
 </body>
 </html>

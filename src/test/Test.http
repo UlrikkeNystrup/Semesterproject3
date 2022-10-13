@@ -1,0 +1,4 @@
+POST localhost:8080/api
+
+<User><userName>
+Test User</userName><passWord>Test Pass</passWord></User>

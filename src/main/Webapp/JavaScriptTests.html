@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Script</title>
+</head>
+<script>
+    let list = [];
+    function doAdd(){
+        p = {};
+        p.navn = document.getElementById("input1").value;
+        p.cpr = document.getElementById("input2").value;
+        list.push(p);
+        document.getElementById("list").innerText = JSON.stringify(list);
+    }
+    function doFind(){
+        const target = document.getElementById("input3").value;
+        let found = null;
+        for (var i = 0; i < list.length; i++){
+            if ( list[i].cpr === target ) {
+                found = list[i];
+            }
+        }
+        if ( found != null ) {
+            document.getElementById("found").innerText = JSON.stringify(found);
+        } else {
+            document.getElementById("found").innerText = "Not found!"
+        }
+    }
+</script>
+<body>
+<input type="text" id="input1">
+<input type="text" id="input2">
+<div>Resultat</div>
+<div id="list"></div>
+<button onclick="doAdd()">Tilføj ny patient</button>
+<br>
+<input type="text" id="input3">
+<button onclick="doFind()">Find patient i systemet</button>
+<div id="found"></div>
+</body>
+</html>

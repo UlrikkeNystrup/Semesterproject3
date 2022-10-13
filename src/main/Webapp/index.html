@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login DeluxeEHR login</title>
+    <link rel="stylesheet" type="text/css" href="Style.css">
+    <script>
+        const knapHandler = funktion(){
+            let evasInput = dokument.getElementById("evasDiv");
+            evasInput.innerText = "ny tekst"
+        }
+
+    </script>
+
+    <style>
+        input[type=submit] {
+            background-color: #008CBA;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+    </style>
+    <script src="Main.js"></script>
+
+</head>
+<body>
+<div class="banner">
+    <div class="login_div">
+        <h1> Velkommen</h1>
+        <div class ="logo">
+        <img src="logo.jpg" alt="" height="100px">
+        </div>
+            <div class="form">
+                <form action="HomePage.html" method="post">
+                   <label for="username"> Brugernavn:</label><br>
+                   <input type="text" id="username" name="username" required><br>
+                   <label for="pwd"> Kodeord:</label><br>
+                   <input type="text" id="pwd" name="pwd" required><br><br>
+                    <input id="evasInput" type="submit" value="Login" >
+                 </form>
+            </div>
+    </div>
+</div>
+
+</body>
+</html>

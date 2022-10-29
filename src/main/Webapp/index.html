@@ -27,12 +27,13 @@
         <img src="logo.jpg" alt="" height="100px">
         </div>
             <div class="form">
-                <form action="HomePage.html" method="post">
+                <form name="form" onsubmit= "return loginFuc()" action="HomePage.html">
                    <label for="username"> Brugernavn:</label><br>
                    <input type="text" id="username" name="username" required><br>
                    <label for="passwordID"> Kodeord:</label><br>
                    <input type="password" id="passwordID" name="password" required><br><br>
                     <input type="checkbox" onclick="passwordFunction()">Vis kodeord<br><br>
+                    <div> Glemt Brugernavn/kodeord</div>
                     <input type="submit" value="Login" >
                  </form>
             </div>
@@ -41,6 +42,20 @@
 
 //metode der gør det muligt at vise/skjule password
 <script>
+
+    /*function loginFuc(){
+            var user = document.getElementById("username").value;
+            var pass = document.getElementById("passwordID").value;
+            if(user == "navn" && pass == "kode") {
+                alert("Logged In");
+            return true;
+            }
+            else {
+                alert("wrong user/pass");
+                return false;
+            }
+    }*/
+
     function passwordFunction() {
         var x = document.getElementById("passwordID");
         if (x.type === "password") {

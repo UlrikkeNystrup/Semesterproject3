@@ -3,8 +3,8 @@ import java.io.*;
 public class JavaSerializer {
     public static void main(String[] args) {
         User user = new User();
-        user.setUserName("testUser");
-        user.setPassWord("testPass");
+        user.setKonsutationsDato("testDato");
+        user.setKonsutationsTid("testTid");
         writeToFile(user);
         System.out.println("Wrote file");
         System.out.println("Reading file");

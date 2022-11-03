@@ -7,8 +7,8 @@ import java.io.IOException;
 public class XMLSerializer {
     public static void main(String[] args) throws IOException {
         User user = new User();
-        user.setUserName("testUser");
-        user.setPassWord("testPass");
+        user.setKonsutationsDato("testDato");
+        user.setKonsutationsTid("testTid");
         XmlMapper mapper = new XmlMapper();
         mapper.enable(SerializationFeature.INDENT_OUTPUT);
         String xmlString = mapper.writeValueAsString(user);

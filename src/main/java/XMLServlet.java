@@ -15,8 +15,8 @@ public class XMLServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         User user = new User();
-        user.setPassWord("Test Pass");
-        user.setUserName("Test User");
+        user.setKonsutationsDato("Test dato");
+        user.setKonsutationsTid("Test tid");
         String xmlString = mapper.writeValueAsString(user);
         PrintWriter writer = resp.getWriter();
         writer.write(xmlString);

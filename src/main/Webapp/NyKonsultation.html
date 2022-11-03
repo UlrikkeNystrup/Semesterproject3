@@ -44,6 +44,7 @@
                     document.getElementById("found").innerText = "Not found!" //hvis patienten ikke findes, udskrives "Not found!"
                 }
             }
+
         </script>
 
         <label for="patientnavn">Indtast navn:</label>
@@ -63,10 +64,23 @@
         <input type="text" id="registreret_cpr" name="registreret_cpr" required><br>
         <button onclick="doFind()">hent konsultation i systemet</button>
         <div id="found"></div>
+    </div>
+</div>
 
     </div>
 
 </div>
+
+
+<!--<script>
+
+const serializer = new XMLSerializer();
+const xmlString = serializer.serializeToString(document);
+const list =document.getElementById(list)
+
+console.log(xmlString);
+</script>-->
+
 
 </body>
 

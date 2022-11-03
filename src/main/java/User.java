@@ -2,30 +2,30 @@ import java.io.Serializable;
 
 public class User implements Serializable {
 
-    private String userName;
-    private String passWord;
+    private String konsutationsDato;
+    private String konsutationsTid;
 
     @Override
     public String toString() {
-        return "User{" +
-                "userName='" + userName + '\'' +
-                ", passWord='" + passWord + '\'' +
+        return "Nykons{" +
+                "konsutationsDato='" + konsutationsDato + '\'' +
+                ", konsutationsTid='" + konsutationsTid + '\'' +
                 '}';
     }
 
-    public String getUserName() {
-        return userName;
+    public String getKonsutationsDato() {
+        return konsutationsDato;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public void setKonsutationsDato(String konsutationsDato) {
+        this.konsutationsDato = konsutationsDato;
     }
 
-    public String getPassWord() {
-        return passWord;
+    public String getKonsutationsTid() {
+        return konsutationsTid;
     }
 
-    public void setPassWord(String passWord) {
-        this.passWord = passWord;
+    public void setKonsutationsTid(String konsutationsTid) {
+        this.konsutationsTid = konsutationsTid;
     }
 }

@@ -23,6 +23,11 @@ body {
     width: 175px;
     padding: 100px;
 }
+.forgot{
+    cursor: pointer;
+    font-size: small;
+    padding-bottom: 2%;
+            }
 .Login_butt{
 
 }

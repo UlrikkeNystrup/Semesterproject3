@@ -1,3 +1,6 @@
+//bruges ikke til noget, kan derfor slettes
+
+/*
 import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 
@@ -21,3 +24,4 @@ public class XMLSerializer {
 
     }
 }
+*/

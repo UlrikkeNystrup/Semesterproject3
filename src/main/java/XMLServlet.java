@@ -6,8 +6,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-import java.io.IOException;
-import java.io.PrintWriter;
+import java.io.*;
 
 @WebServlet(name = "XMLServlet",urlPatterns = "/api")
 public class XMLServlet extends HttpServlet {
@@ -21,6 +20,15 @@ public class XMLServlet extends HttpServlet {
         PrintWriter writer = resp.getWriter();
         writer.write(xmlString);
         writer.flush();
+
+/*
+        User user2 = new User();
+        user2.setKonsutationsDato();
+        user2.setKonsutationsTid("testTid");
+        writeToFile(user);
+*/
+
+
     }
 
     @Override
@@ -49,4 +57,15 @@ public class XMLServlet extends HttpServlet {
         }
 
 
-    }}
+    }
+    private static void writeToFile(Serializable s){
+        try {
+            FileOutputStream out = new FileOutputStream("User.obj");
+            ObjectOutputStream objectOut = new ObjectOutputStream(out);
+            objectOut.writeObject(s);
+            objectOut.flush();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}

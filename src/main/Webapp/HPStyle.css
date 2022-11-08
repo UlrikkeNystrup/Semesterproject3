@@ -62,12 +62,13 @@ nav ul li a{
 
 .sidebar{
     grid-area: sidebar;
+    padding: 20px 60px;
 }
+
 footer{
     grid-area: footer;
     border-style: solid none none none;
     border-color: darkblue;
-
 
 }
 

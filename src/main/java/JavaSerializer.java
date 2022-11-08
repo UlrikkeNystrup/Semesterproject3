@@ -1,5 +1,11 @@
 import java.io.*;
 
+//denne javaklasse bruges ikke til noget i dette projekt, den kan derfor slettes
+
+
+
+
+/*
 public class JavaSerializer {
     public static void main(String[] args) {
         User user = new User();
@@ -36,3 +42,4 @@ public class JavaSerializer {
     }
 
 }
+*/

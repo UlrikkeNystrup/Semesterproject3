@@ -70,13 +70,13 @@ nav ul li a{
 .main{
     margin: auto;
     grid-area: main;
-   /* background-color: brown;*/
+   /*background-color: brown;*/
+}
+.maindiv{
+    padding: 200px;
+
 }
 
-.form{
-    display: inline-block;
-
-}
 
 footer{
     grid-area: footer;

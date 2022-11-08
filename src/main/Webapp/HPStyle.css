@@ -9,6 +9,13 @@ body {
     color: white;
     font-family: "Century Gothic";
 
+    /*
+    background-color: blueviolet;
+    */
+
+
+
+
 }
 .banner{
     Width: 100%;
@@ -21,13 +28,13 @@ body {
 .Container{
     display:grid;
     height: 100vh;
-    grid-template-columns: 0.8fr 3fr;
+    grid-template-columns: 10fr;
     grid-template-rows: 0.5fr 3fr 0.5fr;
     grid-gap: 0.1rem;
     grid-template-areas:
-            "nav nav"
-            "sidebar main"
-            "footer footer"
+            "nav"
+            "main"
+            "footer"
 }
 
 nav{
@@ -41,6 +48,11 @@ nav{
 
     border-style: outset;
     border-color: dodgerblue;
+/*
+    background-color: chartreuse;
+
+ */
+
 }
 
 nav ul li{
@@ -56,13 +68,14 @@ nav ul li a{
 }
 
 .main{
-    grid-area: main
+    margin: auto;
+    grid-area: main;
+   /* background-color: brown;*/
 }
 
+.form{
+    display: inline-block;
 
-.sidebar{
-    grid-area: sidebar;
-    padding: 20px 60px;
 }
 
 footer{

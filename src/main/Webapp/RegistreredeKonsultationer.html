@@ -3,19 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <title>RegistreredeKonsulationer</title>
+    <link rel="stylesheet"  href="HPStyle.css">
+
 </head>
 <body>
+<style>
+    .button {
+        border: none;
+        color: black;
+        padding: 10px 55px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 18px;
+        font-family: "Baloo Thambi 2";
+        text-transform: full-size-kana;
+        margin: 5px 2px;
+        cursor: pointer;
+        background-color: dodgerblue;
+        border: 4px solid white; /* Green */
+    }
+</style>
+
 <div class="banner">
-    <div class="login_div">
-        <h1> hent konsultationer</h1>
-        <div class ="logo">
-            <img src="logo.jpg" alt="" height="100px">
+    <div class="Container">
+        <nav>
+            <div class=“logo”>
+                <img src="logo.jpg" alt="" height="70px">
+            </div>
+            <ul>
+                <li><a href="#">Bruger: XXX YYYY</a></li>
+                <li><a href="#">Tid: 12:00 Dato: 01-01-2022</a></li>
+                <li><a href="#">Log ud</a></li>
+            </ul>
+        </nav>
+        <div class="main">
+            <h1>Hent Konsultation</h1>
+            <div class="form">
+                <form>
+                    <label for="CPR">Indtast CPR-nummer:</label><br>
+                    <input type="text" id="CPR" name="CPR" required><br>
+                    <label for="dato">Indtast Dato for Konsultation</label><br>
+                    <input type="text" id="dato" name="dato"><br>
+                    <input type="button" onclick="" value="Hent konsultation">
+                </form>
+            </div>
         </div>
 
-        <label for="registreret_cpr">hent konsultation med CPR:</label><br>
-        <input type="text" id="registreret_cpr" name="registreret_cpr" required><br>
-        <button onclick="doFind()">hent konsultation i systemet</button>
-        <div id="found"></div>
+        <footer>RegionH</footer>
+    </div>
 
+</div>
 </body>
 </html>

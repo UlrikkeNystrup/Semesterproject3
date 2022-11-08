@@ -4,6 +4,7 @@
     font-family: sans-serif;
 
 }
+
 body {
     background-color: azure;
     color: white;
@@ -34,3 +35,5 @@ body {
 .sidebar{
     padding: 14px 60px;
 }
+h1 {
+    text-align: center;}

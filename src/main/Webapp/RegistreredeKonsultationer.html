@@ -7,9 +7,15 @@
 <body>
 <div class="banner">
     <div class="login_div">
-        <h1> Registrerede konsultationer</h1>
+        <h1> hent konsultationer</h1>
         <div class ="logo">
             <img src="logo.jpg" alt="" height="100px">
         </div>
+
+        <label for="registreret_cpr">hent konsultation med CPR:</label><br>
+        <input type="text" id="registreret_cpr" name="registreret_cpr" required><br>
+        <button onclick="doFind()">hent konsultation i systemet</button>
+        <div id="found"></div>
+
 </body>
 </html>

@@ -69,8 +69,12 @@ footer{
     grid-area: footer;
     border-style: solid none none none;
     border-color: darkblue;
-
 }
+
+h1 {text-align: center;}
+
+
+
 
 
 

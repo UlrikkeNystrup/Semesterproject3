@@ -5,95 +5,110 @@
     <meta charset="UTF-8">
     <title>Ny konsultation</title>
     <link rel="stylesheet"  href="HPStyle.css">
-    <style>
-        h1 {text-align: center;}
-    </style>
+
 
 </head>
 
 <body>
 <div class="banner">
-        <div class="Container">
-            <nav>
-                <div class=“logo”>
-                    <img src="logo.jpg" alt="" height="70px">
-                </div>
-                <ul>
-                    <li><a href="#">Bruger: XXX YYYY</a></li>
-                    <li><a href="#">Tid: 12:00 Dato: 01-01-2022</a></li>
-                    <li><a href="index.html" >Log ud</a>  </li>
-                </ul>
+    <div class="Container">
+        <nav>
+            <div class=“logo”>
+                <img src="logo.jpg" alt="" height="70px">
+            </div>
+            <ul>
+                <li><a href="#">Bruger: XXX YYYY</a></li>
+                <li><a href="#">Tid: 12:00 Dato: 01-01-2022</a></li>
+                <li><a href="index.html" >Log ud</a>  </li>
+            </ul>
 
-            </nav>
+        </nav>
 
-<div class="main">
+        <div class="main">
 
-        <h1>Ny konsultation</h1>
+            <h1>Opret konsultation</h1>
 
-        <script>
-            let list = []; //opretter en variabel list, som peger på et array
-            //en metode der tilføjer en patient til listen med navn + cpr
-            function doAdd(){
-                let nyKonsultation = {}; //opretter en variabel patient, som peger på et objekt
-                //tilføjer attributter til objektet og tildeler dem værdier fra input-felterne
-                nyKonsultation.navn = document.getElementById("patientnavn").value;
-                nyKonsultation.cpr = document.getElementById("cprnummer").value;
-                nyKonsultation.dato = document.getElementById("datonummer").value;
-                nyKonsultation.tid = document.getElementById("klokkeslet").value;
-                list.push(nyKonsultation); //lægger værdierne over i objektet nyKonsultation
-                document.getElementById("list").innerText = JSON.stringify(list); //data gemmes i JSON filformat
-            }
-            //en metode til at finde en patient i listen
-            function doFind(){
-                //opretter en variabel og tildeler den værdien fra inputfelt 3
-                const target = document.getElementById("registreret_cpr").value; //target værdien ændres ikke, derfor en const variabel
-                let found = null; //found værdien ændres, derfor en let variabel
-                //laver en forløkke, der søger efter værdien tastet i inputfelt 3 i alle elementerne i array'et
-                for (var i = 0; i < list.length; i++){
-                    if ( list[i].cpr === target ) {
-                        found = list[i];
+            <script>
+                var list = []; //opretter en variabel list, som peger på et array
+                //en metode der tilføjer en patient til listen med navn + cpr
+                function doAdd(){
+                    var nyKonsultation = {}; //opretter en variabel patient, som peger på et objekt
+                    //tilføjer attributter til objektet og tildeler dem værdier fra input-felterne
+                    nyKonsultation.cpr = document.getElementById("cprnummer").value;
+                    nyKonsultation.navn = document.getElementById("patientnavn").value;
+                    nyKonsultation.dato = document.getElementById("datonummer").value;
+                    nyKonsultation.tid = document.getElementById("klokkeslet").value;
+                    list.push(nyKonsultation); //lægger værdierne over i objektet nyKonsultation
+                    document.getElementById("list").innerText = JSON.stringify(list); //data gemmes i JSON filformat
+                }
+                //en metode til at finde en patient i listen
+                function doFind(){
+                    //opretter en variabel og tildeler den værdien fra inputfelt 3
+                    const target = document.getElementById("registreret_cpr").value; //target værdien ændres ikke, derfor en const variabel
+                    var found = null; //found værdien ændres, derfor en let variabel
+                    //laver en forløkke, der søger efter værdien tastet i inputfelt 3 i alle elementerne i array'et
+                    for (var i = 0; i < list.length; i++){
+                        if ( list[i].cpr === target ) {
+                            found = list[i];
+                        }
+                    }
+                    if ( found != null ) {
+                        document.getElementById("found").innerText = JSON.stringify(found); //hvis patienten findes udskrives denne i JSON format
+                    } else {
+                        document.getElementById("found").innerText = "Not found!" //hvis patienten ikke findes, udskrives "Not found!"
                     }
                 }
-                if ( found != null ) {
-                    document.getElementById("found").innerText = JSON.stringify(found); //hvis patienten findes udskrives denne i JSON format
-                } else {
-                    document.getElementById("found").innerText = "Not found!" //hvis patienten ikke findes, udskrives "Not found!"
-                }
-            }
+            </script>
 
-        </script>
+            <div class="OpretKonsultation">
+                <form>
+                    <label for="cprnummer">Indtast CPR:</label>
+                    <input type="text" id="cprnummer" name="cprnummer" required><br>
+                    <label for="datonummer">Indtast dato:</label>
+                    <input type="text" id="datonummer" name="datonummer" required><br>
+                    <label for="klokkeslet">Indtast tidspunkt:</label>
+                    <input type="text" id="klokkeslet" name="klokkeslet" required><br>
+                </form>
+                <div class="custom-select" style="width:200px;">
+                    <select>
+                        <option value="0">vælg konsultationstype:</option>
+                        <option value="1">E-konsultation</option>
+                        <option value="2">telefon-konsultation</option>
+                        <option value="3">normal-konsultation</option>
 
-        <label for="patientnavn">Indtast navn:</label>
-        <input type="text" id="patientnavn" name="patientnavn" required><br>
-        <label for="cprnummer">Indtast CPR:</label>
-        <input type="text" id="cprnummer" name="cprnummer" required><br>
-        <label for="datonummer">Indtast dato:</label>
-        <input type="text" id="datonummer" name="datonummer" required><br>
-        <label for="klokkeslet">Indtast tidspunkt:</label>
-        <input type="text" id="klokkeslet" name="klokkeslet" required><br>
+                    </select>
+                </div>
+                <div class="custom-select" style="width:200px;">
+                    <select>
+                        <option value="0">vælg varrighed:</option>
+                        <option value="1">15 min</option>
+                        <option value="2">30 min</option>
+                        <option value="3">60 min</option>
+                    </select>
+                </div>
 
-        <button onclick="doAdd()">Tilføj ny konsultation</button>
-        <div>Resultat</div>
-        <div id="list"></div>
-        <br/>
-        <label for="registreret_cpr">hent konsultation med CPR:</label><br>
-        <input type="text" id="registreret_cpr" name="registreret_cpr" required><br>
-        <button onclick="doFind()">hent konsultation i systemet</button>
-        <div id="found"></div>
+                <form action="#">
+                    <p><label for="notat">notat:</label></p>
+                    <textarea id="notat" name="notat" rows="4" cols="50">tilføj notat til konsultation.</textarea>
+                    <br>
+                </form>
+                <button onclick="doAdd()">Tilføj ny konsultation</button>
+                <div>Resultat</div>
+                <div id="list"></div>
+                <br/>
+
+            </div>
+        </div>
+
     </div>
-</div>
-
-    </div>
 
 </div>
-
 
 const serializer = new XMLSerializer();
 const xmlString = serializer.serializeToString(document);
 const list =document.getElementById(list)
 
 console.log(xmlString);
-
 
 
 </body>

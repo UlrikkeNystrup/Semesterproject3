@@ -93,18 +93,24 @@
                         <option value="3">60 min</option>
                     </select>
                 </div>
-                <div class="notat"
+                <div class="notat">
                 <form action="#">
                     <p><label for="notat">notat:</label></p>
                     <textarea id="notat" name="notat" rows="4" cols="50">tilføj notat til konsultation.</textarea>
                     <br>
                 </form>
                 <div/>
-                <button onclick="history.back()" class="button" >Go Back</button>
                 <button onclick="doAdd()" class="button">Tilføj ny konsultation</button>
                 <div>Resultat</div>
                 <div id="list"></div>
                 <br/>
+                    <br>
+                    <input type="text" id="registreret_cpr">
+                    <button onclick="doFind()">Find patient</button>
+                    Fandt:
+                    <div id="found"></div>
+
+
 
             </div>
         </div>
@@ -114,7 +120,11 @@
 <!--kommentar-->
 
 </div>
-<footer>RegionH</footer>
+<footer>
+
+    <button onclick="history.back()" class="button" >Go Back</button>
+    RegionH
+</footer>
 
 </body>
 

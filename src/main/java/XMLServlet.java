@@ -28,7 +28,6 @@ public class XMLServlet extends HttpServlet {
         writeToFile(user);
 */
 
-
     }
 
     @Override

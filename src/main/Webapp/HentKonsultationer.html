@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>RegistreredeKonsulationer</title>
+    <title>Hent konsulationer</title>
     <link rel="stylesheet"  href="HPStyle.css">
 
 </head>
@@ -40,17 +40,13 @@
         <div class="main">
             <h1>Hent Konsultation</h1>
             <div class="maindiv">
-                <form>
+                <form action=konsultationsHistorik.html method="post">
 
                     <label for="CPR">Indtast CPR-nummer:</label><br>
                     <input type="text" id="CPR" name="CPR" required><br>
                     <label for="dato">Indtast Dato for Konsultation</label><br>
                     <input type="text" id="dato" name="dato"><br>
-
-                    <a href="KonsultationsHistorik.html"
-                    <button class="button hentkonsultation">Hent Konsultation</button>
-                    </a>
-
+                    <input type="submit" class="button" value="Hent">
                 </form>
             </div>
 

@@ -48,7 +48,7 @@ public class XMLServlet extends HttpServlet {
         if (username.toLowerCase().equals("hans") && password.equals("Secret")) {
             resp.addCookie(new Cookie("session", username));
             PrintWriter writer = resp.getWriter();
-            resp.sendRedirect("HomePage.html");
+            resp.sendRedirect("NewHomePage.html");
             //writer.print("congrats, " + username + ", you got in ");
             writer.close();
         } else {

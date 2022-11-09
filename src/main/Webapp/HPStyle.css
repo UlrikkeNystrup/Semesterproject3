@@ -70,14 +70,18 @@ nav ul li a{
 .main{
     margin: auto;
     grid-area: main;
+    /*border: 1px solid black;*/
    /*background-color: brown;*/
 }
 .maindiv{
-    padding: 200px;
+    padding-top: 100px;
+    padding-button: 100px;
+    padding-left: 0px;
+    padding-right: 0px;
+    font-size: 20px;
+
 
 }
-
-
 footer{
     grid-area: footer;
     border-style: solid none none none;
@@ -86,6 +90,49 @@ footer{
 
 h1 {text-align: center;}
 
+.paddingdiv {
+    border: 0px solid black;
+    padding-top: 20px;
+    padding-right: 30px;
+    padding-bottom: 20px;
+    padding-left: 80px;
+}
+.custom-select1{
+    border: 0px solid black;
+    padding-top: 5px;
+    padding-right: 30px;
+    padding-bottom: 5px;
+    padding-left: 80px;
+}
+.custom-select2{
+    border: 0px solid black;
+    padding-top: 5px;
+    padding-right: 30px;
+    padding-bottom: 20px;
+    padding-left: 80px;
+}
+.notat{
+    border: 0px solid black;
+    padding-top: 5px;
+    padding-right: 30px;
+    padding-bottom: 20px;
+    padding-left: 80px;
+}
+.button {
+    border: none;
+    color: black;
+    padding: 10px 55px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 18px;
+    font-family: "Baloo Thambi 2";
+    text-transform: full-size-kana;
+    margin: 5px 2px;
+    cursor: pointer;
+    background-color: dodgerblue;
+    border: 4px solid white; /* Green */
+}
 
 
 

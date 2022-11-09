@@ -6,7 +6,6 @@
     <title>Ny konsultation</title>
     <link rel="stylesheet"  href="HPStyle.css">
 
-
 </head>
 
 <body>
@@ -58,17 +57,26 @@
                     }
                 }
             </script>
-            <div class="maindiv">
+
+            <div class="main">
 
                 <form>
-                    <label for="cprnummer">Indtast CPR:</label>
-                    <input type="text" id="cprnummer" name="cprnummer" required><br>
-                    <label for="datonummer">Indtast dato:</label>
-                    <input type="text" id="datonummer" name="datonummer" required><br>
-                    <label for="klokkeslet">Indtast tidspunkt:</label>
-                    <input type="text" id="klokkeslet" name="klokkeslet" required><br>
+                    <div class = "paddingdiv">
+                        <label for="cprnummer">Indtast CPR:</label>
+                        <input type="text" id="cprnummer" name="cprnummer" required><br>
+                    </div>
+                    <div class = "paddingdiv">
+                        <label for="datonummer">Indtast dato:</label>
+                        <input type="text" id="datonummer" name="datonummer" required><br>
+                    </div>
+                    <div class = "paddingdiv">
+                        <label for="klokkeslet">Indtast tidspunkt:</label>
+                        <input type="text" id="klokkeslet" name="klokkeslet" required><br>
+                    </div>
+
                 </form>
-                <div class="custom-select" style="width:200px;">
+
+                <div class="custom-select1" style="width:200px;">
                     <select>
                         <option value="0">vælg konsultationstype:</option>
                         <option value="1">E-konsultation</option>
@@ -77,7 +85,7 @@
 
                     </select>
                 </div>
-                <div class="custom-select" style="width:200px;">
+                <div class="custom-select2" style="width:200px;">
                     <select>
                         <option value="0">vælg varrighed:</option>
                         <option value="1">15 min</option>
@@ -85,13 +93,15 @@
                         <option value="3">60 min</option>
                     </select>
                 </div>
-
+                <div class="notat"
                 <form action="#">
                     <p><label for="notat">notat:</label></p>
                     <textarea id="notat" name="notat" rows="4" cols="50">tilføj notat til konsultation.</textarea>
                     <br>
                 </form>
-                <button onclick="doAdd()">Tilføj ny konsultation</button>
+                <div/>
+                <button onclick="history.back()" class="button" >Go Back</button>
+                <button onclick="doAdd()" class="button">Tilføj ny konsultation</button>
                 <div>Resultat</div>
                 <div id="list"></div>
                 <br/>
@@ -101,14 +111,10 @@
 
     </div>
 
+
+
 </div>
-
-const serializer = new XMLSerializer();
-const xmlString = serializer.serializeToString(document);
-const list =document.getElementById(list)
-
-console.log(xmlString);
-
+<footer>RegionH</footer>
 
 </body>
 

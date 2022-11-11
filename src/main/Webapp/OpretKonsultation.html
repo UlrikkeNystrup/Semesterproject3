@@ -28,6 +28,8 @@
             <h1>Opret konsultation</h1>
 
             <script>
+                // gamle funktion ved gem af konsultation
+                /*
                 var list = []; //opretter en variabel list, som peger på et array
                 //en metode der tilføjer en patient til listen med navn + cpr
                 function doAdd(){
@@ -56,11 +58,13 @@
                         document.getElementById("found").innerText = "Not found!" //hvis patienten ikke findes, udskrives "Not found!"
                     }
                 }
+
+                 */
             </script>
 
             <div class="main">
 
-                <form>
+                <form class="form" action="register" method="get">
                     <div class = "paddingdiv">
                         <label for="cprnummer">Indtast CPR:</label>
                         <input type="text" id="cprnummer" name="cprnummer" required><br>
@@ -74,37 +78,50 @@
                         <input type="text" id="klokkeslet" name="klokkeslet" required><br>
                     </div>
 
-                </form>
+                    <!-- Alternativ hvis vi skal samle det til en date-time variabel
+                    <div class="paddingdiv">
+                        <label for="meeting-time">Vælg tidspunkt for konsultation</label><br>
+                        <input type="datetime-local" id="meeting-time" name="meeting-time"
+                                name="meeting-time" value="2022-11-10T12:00">
+                    </div>-->
 
-                <div class="custom-select1" style="width:200px;">
-                    <select>
-                        <option value="0">vælg konsultationstype:</option>
-                        <option value="1">E-konsultation</option>
-                        <option value="2">telefon-konsultation</option>
-                        <option value="3">normal-konsultation</option>
+                    <div class="custom-select1" style="width:200px;">
+                        <label for="type">Konsultationstype</label>
+                        <select id="type" name="type">
+                            <option value="1">normal-konsultation</option>
+                            <option value="2">telefon-konsultation</option>
+                            <option value="3">E-konsultation</option>
 
-                    </select>
-                </div>
-                <div class="custom-select2" style="width:200px;">
-                    <select>
-                        <option value="0">vælg varrighed:</option>
-                        <option value="1">15 min</option>
-                        <option value="2">30 min</option>
-                        <option value="3">60 min</option>
-                    </select>
-                </div>
-                <div class="notat">
-                <form action="#">
-                    <p><label for="notat">notat:</label></p>
-                    <textarea id="notat" name="notat" rows="4" cols="50">tilføj notat til konsultation.</textarea>
-                    <br>
-                </form>
-                <div/>
-                <button onclick="doAdd()" class="button">Tilføj ny konsultation </button>
+                        </select>
+                    </div>
+                    <div class="custom-select2" style="width:200px;">
+                        <label for ="varighed">Konsultationsvarighed</label>
+                        <select id="varighed" name="varighed">
+                            <option value="1">15 min</option>
+                            <option value="2">30 min</option>
+                            <option value="3">60 min</option>
+                        </select>
+                    </div>
+                    <div class="notat">
+
+                        <p><label for="notat">notat:</label></p>
+                        <textarea id="notat" name="notat" rows="4" cols="50">tilføj notat til konsultation.</textarea>
+                        <br>
+
+                    </div>
+
+                    <input type="submit" class="button" value="Tilføj ny konsultation">
+
+                    <!-- Den gamle gem konsultationsknap
+                    <button onclick="doAdd()" class="button">Tilføj ny konsultation </button>
+                    </div>-->
 
                     <a href="KonsultationsHistorik.html">
                         <button class="button">gå til konsultationshistorik </button>
                     </a>
+
+                </form>
+
 
                 <div>Resultat</div>
                 <div id="list"></div>
@@ -121,7 +138,7 @@
 
     </div>
 
-<!--kommentar-->
+
 
 </div>
 <footer>

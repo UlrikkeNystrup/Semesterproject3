@@ -7,6 +7,7 @@ import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import org.mindrot.jbcrypt.BCrypt;
 
 import java.io.*;
 
@@ -46,7 +47,9 @@ public class XMLServlet extends HttpServlet {
         String username = req.getParameter("username");
         String password = req.getParameter("password");
 
-        if (username.toLowerCase().equals("hans") && password.equals("Secret")) {
+        String hashed = BCrypt.hashpw("secret", BCrypt.gensalt());
+
+        if (username.toLowerCase().equals("hans") && BCrypt.checkpw(password, hashed)) {
             resp.addCookie(new Cookie("session", username));
             PrintWriter writer = resp.getWriter();
             resp.sendRedirect("NewHomePage.html");

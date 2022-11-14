@@ -30,9 +30,10 @@ public class RegisterKonsServlet extends HttpServlet {
 
         //System.out.println("cpr: "+ CPR +" Dato: "  +dato+" Tid: "+ tid+ " Type: "+ type+ " Varighed: "+ varighed + " notat: " + notat);
         try {
+            Class.forName("com.mysql.jdbc.Driver"); //nødvendigt for at det virker på Tomcat serveren
             Connection connection= SqlConnection.getConnection();
             //connection.setAutoCommit(false); //overflødig fordi vi kun laver én type forespørgsel
-            System.out.println("der er forbindelse");
+            System.out.println("der er forbindelse til databasen");
 
             PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO Konsultationer(CPR, Dato, Tid, Konsultationstype, Konsultationsvarighed, Notat) VALUES (?,?,?,?,?,?)");
             //System.out.println(ptDto.getPatientId());
@@ -46,7 +47,10 @@ public class RegisterKonsServlet extends HttpServlet {
         }
         catch (SQLException e) {
             e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
         }
+
         //lukker streamen
         pw.close();
 

@@ -32,8 +32,9 @@ public class RegisterKonsServlet extends HttpServlet {
         try {
             Connection connection= SqlConnection.getConnection();
             //connection.setAutoCommit(false); //overflødig fordi vi kun laver én type forespørgsel
+            System.out.println("der er forbindelse");
 
-            PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO Konsultation (CPR, Dato, Tid, Konsultationstype, Konsultationsvarighed, Notat) VALUES (?,?,?,?,?,?)");
+            PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO Konsultationer(CPR, Dato, Tid, Konsultationstype, Konsultationsvarighed, Notat) VALUES (?,?,?,?,?,?)");
             //System.out.println(ptDto.getPatientId());
             preparedStatement.setString(1, CPR);
             preparedStatement.setString(2, dato);
@@ -50,12 +51,6 @@ public class RegisterKonsServlet extends HttpServlet {
         pw.close();
 
         //resp.sendRedirect("index.html");
-
-
-
-
-
-
 
 
     }

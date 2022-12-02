@@ -18,6 +18,7 @@ public class SqlConnection {
         try {
             if (connection==null || connection.isClosed()) {
                 connection = DriverManager.getConnection("jdbc:mysql://db.caprover.diplomportal.dk/s215849?"
+
                         + "user=s215849&password=VZQM7OAP0CnLXTZ4rqYgw");
             }
         } catch (SQLException e) {

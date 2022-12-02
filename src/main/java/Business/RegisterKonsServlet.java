@@ -44,7 +44,11 @@ public class RegisterKonsServlet extends HttpServlet {
             preparedStatement.setString(5, varighed);
             preparedStatement.setString(6, notat);
             preparedStatement.execute();
+            //resp.sendRedirect("OpretKonsultation.html");
+
             //metoden execute vælges fordi vi bare ønsker at vide om det lykkedes eller ej
+
+
         }
         catch (SQLException e) {
             e.printStackTrace();
@@ -55,8 +59,7 @@ public class RegisterKonsServlet extends HttpServlet {
         //lukker streamen
         pw.close();
 
-        //resp.sendRedirect("index.html");
-
+        resp.sendRedirect("OpretKonsultation.html");
 
     }
 

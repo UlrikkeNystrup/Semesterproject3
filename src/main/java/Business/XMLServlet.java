@@ -47,7 +47,8 @@ public class XMLServlet extends HttpServlet {
         String username = req.getParameter("username");
         String password = req.getParameter("password");
 
-        String hashed = BCrypt.hashpw("Secret", BCrypt.gensalt());
+        //hashpw metode som ligger i Bcrypt klassen lagrer noget i hashed-Strengen
+        String hashed = BCrypt.hashpw(password, BCrypt.gensalt());
 
         if (username.toLowerCase().equals("hans") && BCrypt.checkpw(password, hashed)) {
             resp.addCookie(new Cookie("session", username));

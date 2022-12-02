@@ -15,7 +15,7 @@ import java.sql.SQLException;
 
 @WebServlet(name = "RegisterKonsServlet",urlPatterns = "/register")
 public class RegisterKonsServlet extends HttpServlet {
-
+@Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         PrintWriter pw = resp.getWriter();
         //sætter content type
@@ -44,6 +44,7 @@ public class RegisterKonsServlet extends HttpServlet {
             preparedStatement.setString(5, varighed);
             preparedStatement.setString(6, notat);
             preparedStatement.execute();
+            //metoden execute vælges fordi vi bare ønsker at vide om det lykkedes eller ej
         }
         catch (SQLException e) {
             e.printStackTrace();

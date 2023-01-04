@@ -33,8 +33,9 @@ public class XMLServlet extends HttpServlet {
 
     }
 
-    @Override
+
 /*
+  @Override
    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         User user = mapper.readValue(req.getInputStream(), User.class);
         System.out.println(user);
@@ -52,17 +53,27 @@ public class XMLServlet extends HttpServlet {
 
         if (username.toLowerCase().equals("hans") && BCrypt.checkpw(password, hashed)) {
             resp.addCookie(new Cookie("session", username));
-            PrintWriter writer = resp.getWriter();
+            //PrintWriter writer = resp.getWriter();
             resp.sendRedirect("NewHomePage.html");
             //writer.print("congrats, " + username + ", you got in ");
-            writer.close();
-        } else {
+           // writer.close();
+        }
+        else if(username.equals("Ole") && password.equals("hallo")) {
+            resp.addCookie(new Cookie("session", username));
+           // PrintWriter writer = resp.getWriter();
+            resp.sendRedirect("PatientHomePage.html");
+            //writer.print("congrats, " + username + ", you got in ");
+          //  writer.close();
+            }
+        else {
             resp.sendRedirect("index.html");
 
         }
 
 
     }
+
+    /* udkommenteret
     private static void writeToFile(Serializable s){
         try {
             FileOutputStream out = new FileOutputStream("User.obj");
@@ -72,5 +83,5 @@ public class XMLServlet extends HttpServlet {
         } catch (IOException e) {
             e.printStackTrace();
         }
-    }
+    }*/
 }

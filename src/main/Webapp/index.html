@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Login DeluxeEHR login</title>
@@ -16,7 +17,6 @@
             cursor: pointer;
         }
     </style>
-
 </head>
 
 <body>
@@ -24,26 +24,25 @@
     <div class="login_div">
         <h1> Velkommen</h1>
         <div class ="logo">
-        <img src="logo.jpg" alt="" height="100px">
+            <img src="logo.jpg" alt="" height="100px">
         </div>
-            <div class="form">
-                <form action="api" method="post">
-                   <label for="username"> Brugernavn:</label><br>
-                   <input type="text" id="username" name="username" required><br>
-                   <label for="passwordID"> Kodeord:</label><br>
-                   <input type="password" id="passwordID" name="password" required><br><br>
-                    <div class="forgot"> Glemt Brugernavn/kodeord </div>
-                    <input type="checkbox" onclick="passwordFunction()">Vis kodeord
-
-                    <input type="submit" value="Login" >
-                 </form>
-            </div>
+        <div class="form">
+            <form action="api" method="post">
+                <label for="username"> Brugernavn:</label><br>
+                <input type="text" id="username" name="username" required><br>
+                <label for="passwordID"> Kodeord:</label><br>
+                <input type="password" id="passwordID" name="password" required><br><br>
+                <div class="forgot"> Glemt Brugernavn/kodeord </div>
+                <input type="checkbox" onclick="passwordFunction()">Vis kodeord
+                <input type="submit" value="Login" >
+            </form>
+        </div>
     </div>
 </div>
 
 
 <script>
-    //tidligere login funktion
+    //tidligere login funktion skrevet i javaScript
     /*function loginFuc(){
             var user = document.getElementById("username").value;
             var pass = document.getElementById("passwordID").value;
@@ -56,7 +55,6 @@
                 return false;
             }
     }*/
-    //hej
 
     //metode der gør det muligt at vise/skjule password
     function passwordFunction() {

@@ -12,10 +12,6 @@ body {
     /*
     background-color: blueviolet;
     */
-
-
-
-
 }
 .banner{
     Width: 100%;
@@ -50,9 +46,7 @@ nav{
     border-color: dodgerblue;
 /*
     background-color: chartreuse;
-
  */
-
 }
 
 nav ul li{
@@ -79,8 +73,6 @@ nav ul li a{
     padding-left: 0px;
     padding-right: 0px;
     font-size: 20px;
-
-
 }
 footer{
     grid-area: footer;
@@ -133,8 +125,3 @@ h1 {text-align: center;}
     background-color: dodgerblue;
     border: 4px solid white; /* Green */
 }
-
-
-
-
-

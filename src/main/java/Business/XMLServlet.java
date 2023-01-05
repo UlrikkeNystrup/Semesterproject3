@@ -21,7 +21,7 @@ public class XMLServlet extends HttpServlet {
         if (username.toLowerCase().equals("hanslæge") && password.equals("Secret")) {
             resp.addCookie(new Cookie("session", username));
             //PrintWriter writer = resp.getWriter();
-            resp.sendRedirect("NewHomePage.html");
+            resp.sendRedirect("DoctorHomePage.html");
             //writer.print("congrats, " + username + ", you got in ");
            // writer.close();
         }
@@ -34,10 +34,7 @@ public class XMLServlet extends HttpServlet {
             }
         else {
             resp.sendRedirect("index.html");
-
         }
-
-
     }
 
     /* udkommenteret

@@ -1,5 +1,5 @@
 package Business;
-import Data.SqlConnection;
+import DataAccessLayer.SqlConnection;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;

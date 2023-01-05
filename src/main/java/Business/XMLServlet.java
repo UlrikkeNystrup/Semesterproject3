@@ -14,36 +14,7 @@ import java.io.*;
 @WebServlet(name = "XMLServlet",urlPatterns = "/api")
 public class XMLServlet extends HttpServlet {
     XmlMapper mapper = new XmlMapper();
-    @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
-        User user = new User();
-        user.setKonsutationsDato("Test dato");
-        user.setKonsutationsTid("Test tid");
-        String xmlString = mapper.writeValueAsString(user);
-        PrintWriter writer = resp.getWriter();
-        writer.write(xmlString);
-        writer.flush();
 
-/*
-        User user2 = new User();
-        user2.setKonsutationsDato();
-        user2.setKonsutationsTid("testTid");
-        writeToFile(user);
-*/
-
-    }
-
-
-/*
-  @Override
-   protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
-        User user = mapper.readValue(req.getInputStream(), User.class);
-        System.out.println(user);
-        resp.getWriter().write("Tak for brugeren: " + user);
-
-        }
-
-*/
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String username = req.getParameter("username");
         String password = req.getParameter("password");

@@ -17,7 +17,8 @@ import java.util.List;
 public class EKGservice{
     EkgController ekgController = new EkgController();
     @GET
+
     public List<EkgDTO> getEkg(){
         return ekgController.getEkg();
-    }
+   }
 }

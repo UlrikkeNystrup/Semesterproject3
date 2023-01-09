@@ -4,7 +4,7 @@ import java.util.List;
 
 public class EkgDAO {
     public List<Integer> getEkg() {
-        return
-                ;
+        return null; }
+
     }
-}
+

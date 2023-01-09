@@ -8,6 +8,15 @@ public class EkgDTO {
     private Timestamp tid;
     private double spænding;
 
+    @Override
+    public String toString() {
+        return "EkgDTO{" +
+                "cpr='" + cpr + '\'' +
+                ", tid=" + tid +
+                ", spænding=" + spænding +
+                '}';
+    }
+
     public String getCpr() {
         return cpr;
     }
@@ -27,9 +36,5 @@ public class EkgDTO {
         this.spænding = spænding;
     }
 
-    public String toString(){
-        return "EkgDTO{"+
-                "cpr='"+cpr + '\'+
-
     }
-}
+

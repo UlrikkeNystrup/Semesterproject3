@@ -33,7 +33,7 @@ public class XMLServlet extends HttpServlet {
           //  writer.close();
             }
         else {
-            resp.sendRedirect("index.html");
+            resp.sendRedirect("LoginSide.html");
         }
     }
 

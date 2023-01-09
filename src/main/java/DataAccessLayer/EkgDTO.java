@@ -3,7 +3,7 @@ package DataAccessLayer;
 import java.sql.Timestamp;
 
 public class EkgDTO {
-
+    //databærende klasse, svarer til tabellen EKG
     private String cpr;
     private Timestamp tid;
     private double spænding;
@@ -27,9 +27,13 @@ public class EkgDTO {
         this.spænding = spænding;
     }
 
-    public String toString(){
-        return "EkgDTO{"+
-                "cpr='"+cpr + '\'+
-
+    @Override
+    public String toString() {
+        return "EkgDTO{" +
+                "cpr='" + cpr + '\'' +
+                ", tid=" + tid +
+                ", spænding=" + spænding +
+                '}';
     }
 }
+

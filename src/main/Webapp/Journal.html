@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>PatientHomePage</title>
+    <title>Journal</title>
     <link rel="stylesheet"  href="HPStyle.css">
 
 </head>
@@ -41,29 +41,26 @@
         </nav>
 
 
-        <div class="main">
-            <h1>Min side</h1>
-            <div class="maindiv">
-                <form action=Journal.html method="post">
-                    <input type="submit" class="button" value="Hent Journal">
-                </form>
-                <form action=Tidsbestillinger.html method="post">
-                    <input type="submit" class="button" value="Opret Tidsbestilling">
-                </form>
-                <form action=MineTider.html method="post">
-                    <input type="submit" class="button" value="Mine Tider">
-                </form>
+            <div class="main">
+                <h1> Journal</h1>
+                <div class="maindiv">
+                    <form action=ekg.html method="post">
+                        <input type="submit" class="button" value="Hent EKG målinger">
+                    </form>
+                    <form action=Konsultationer.html method="post">
+                        <input type="submit" class="button" value="Hent konsultationer">
+                    </form>
 
+                </div>
             </div>
+
         </div>
 
+        <footer>
+            <button onclick="history.back()" class="button" >Go Back</button>
+            RegionH
+        </footer>
     </div>
-
-    <footer>
-        <button onclick="history.back()" class="button" >Go Back</button>
-        RegionH
-    </footer>
-</div>
 </div>
 
 </body>

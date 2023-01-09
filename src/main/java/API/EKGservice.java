@@ -14,7 +14,7 @@ import java.util.List;
 @Path("ekg")
 @Produces(MediaType.APPLICATION_JSON)
 
-public class EKGservice {
+public class EKGservice{
     EkgController ekgController = new EkgController();
     @GET
     public List<EkgDTO> getEkg(){

@@ -1,15 +1,14 @@
 package Business;
 
-import DataAccessLayer.EkgDAO;
+import DataAccessLayer.PatientEkgsDAO;
 
-import java.sql.Timestamp;
 import java.util.List;
 
 public class EkgController {
-    EkgDAO ekgDAO = new EkgDAO();
+    PatientEkgsDAO ekgDAO = new PatientEkgsDAO();
 
     public List<Integer> getEkg() {
-        return ekgDAO.getEkg();
+        return null;
 
     }
 }

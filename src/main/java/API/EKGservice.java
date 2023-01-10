@@ -1,14 +1,12 @@
 package API;
 
 import Business.EkgController;
-import DataAccessLayer.EkgDTO;
+import DataAccessLayer.PatientEkgsDTO;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
 import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.core.MediaType;
 
-import java.awt.*;
-import java.util.Arrays;
 import java.util.List;
 
 @Path("ekg")
@@ -17,8 +15,7 @@ import java.util.List;
 public class EKGservice{
     EkgController ekgController = new EkgController();
     @GET
-
-    public List<EkgDTO> getEkg(){
-        return ekgController.getEkg();
+    public List<PatientEkgsDTO> getEkg(){
+        return null;
    }
 }

@@ -1,7 +1,6 @@
 package DataAccessLayer;
-
 import java.sql.*;
-
+//gammel Test klasse, der blev brugt til at se om vi kunne hente og udskrive alt fra Konsultationer tabellen i konsollen
 public class DatabaseTester {
         public static void main(String[] args){
             try {

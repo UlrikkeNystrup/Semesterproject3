@@ -1,9 +1,9 @@
 package DataAccessLayer;
-
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
+//vores klasse der skaber forbindelse til databasen
 public class SqlConnection {
     //Create a Connection object
     private static Connection connection;

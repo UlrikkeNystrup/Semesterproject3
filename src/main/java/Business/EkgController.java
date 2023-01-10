@@ -1,6 +1,6 @@
 package Business;
 
-import DataAccessLayer.PatientEkgsDAO;
+import DataAccessLayer.DAO.PatientEkgsDAO;
 
 import java.util.List;
 

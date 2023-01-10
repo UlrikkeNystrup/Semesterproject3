@@ -1,12 +1,23 @@
-package DataAccessLayer;
+package DataAccessLayer.DTO;
 
 import java.sql.Timestamp;
+import java.util.ArrayList;
+import java.util.List;
 
 public class PatientEkgsDTO {
     //databærende klasse, svarer til tabellen EKG
     private String cpr;
     private String id;
     private Timestamp startTime;
+    private List<List<Double>> samples = new ArrayList<>();
+
+    public List<List<Double>> getSamples() {
+        return samples;
+    }
+
+    public void setSamples(List<List<Double>> samples) {
+        this.samples = samples;
+    }
 
     @Override
     public String toString() {
@@ -14,6 +25,7 @@ public class PatientEkgsDTO {
                 "cpr='" + cpr + '\'' +
                 ", id='" + id + '\'' +
                 ", startTime=" + startTime +
+                ", samples=" + samples +
                 '}';
     }
 

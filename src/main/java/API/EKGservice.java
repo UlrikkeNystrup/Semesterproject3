@@ -1,7 +1,7 @@
 package API;
 
 import Business.EkgController;
-import DataAccessLayer.PatientEkgsDTO;
+import DataAccessLayer.DTO.PatientEkgsDTO;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
 import jakarta.ws.rs.Produces;

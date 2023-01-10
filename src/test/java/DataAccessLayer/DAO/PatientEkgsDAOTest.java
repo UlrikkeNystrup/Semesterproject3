@@ -1,8 +1,7 @@
-package DataAccessLayer;
+package DataAccessLayer.DAO;
+import DataAccessLayer.DAO.PatientEkgsDAO;
 import org.junit.jupiter.api.Test;
 import java.sql.SQLException;
-import java.util.List;
-import java.util.ArrayList;
 
 public class PatientEkgsDAOTest {
     @Test

@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PatientEkgsDAO {
-    public List<PatientEkgsDTO> getEkg(String cpr) throws SQLException {
+    public List<PatientEkgsDTO> getEkg(String cpr){
         List<PatientEkgsDTO> data = new ArrayList<>();
         Connection connection = SqlConnection.getConnection();
         try {

@@ -1,4 +1,5 @@
-POST localhost:8080/api
+POST localhost:8080/rest/konsultation
+Content-Type: application/json
 
-<User><userName>
-Test User</userName><passWord>Test Pass</passWord></User>
+{"cpr": "1110109996", "dato": "11.11", "tid": "1234", "konsultationstype": "test", "konsultationsvarighed":"1 time", "notat": "test2"}
+

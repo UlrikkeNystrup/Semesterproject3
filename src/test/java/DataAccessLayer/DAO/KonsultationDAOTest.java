@@ -16,7 +16,14 @@ class KonsultationDAOTest {
     @Test
     void testSaveKonsultation() throws SQLException {
         KonsultationDAO konsultationDAO2 = new KonsultationDAO();
-        System.out.println(konsultationDAO2.saveKonsultation(??));
+        KonsultationDTO konsultationDTO = new KonsultationDTO();
+        konsultationDTO.setCPR("1110109996");
+        konsultationDTO.setKonsultationstype("test");
+        konsultationDTO.setKonsultationsvarighed("lang tid");
+        konsultationDTO.setDato("10102001");
+        konsultationDTO.setTid("01.01");
+        konsultationDTO.setNotat("test test test");
+        konsultationDAO2.saveKonsultation(konsultationDTO);
         //ved ikke hvad der skal stå som parameter i saveKonsultation() kaldet
     }
 }

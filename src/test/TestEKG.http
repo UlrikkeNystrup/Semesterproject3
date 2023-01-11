@@ -1,0 +1,2 @@
+GET localhost:8080/rest/ekg/1110109996
+Content-Type: application/json

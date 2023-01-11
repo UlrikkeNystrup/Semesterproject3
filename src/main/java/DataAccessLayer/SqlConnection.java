@@ -17,10 +17,13 @@ public class SqlConnection {
          */
         try {
             if (connection==null || connection.isClosed()) {
+                Class.forName("com.mysql.jdbc.Driver"); //nødvendigt for at det virker på Tomcat serveren
                 connection = DriverManager.getConnection("jdbc:mysql://db.caprover.diplomportal.dk/s215849?"
                         + "user=s215849&password=VZQM7OAP0CnLXTZ4rqYgw");
             }
         } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
         return connection;

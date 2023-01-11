@@ -58,27 +58,22 @@ public class KonsultationDAO {
      }*/
 
     //andet bud på saveKonsultation() metode
-    public void saveKonsultation(HttpServletRequest req, HttpServletResponse resp) {
+    public void saveKonsultation(KonsultationDTO konsultationDTO) {
         try {
-            PrintWriter pw = resp.getWriter();
-            resp.setContentType("text/html");
-            Class.forName("com.mysql.jdbc.Driver"); //nødvendigt for at det virker på Tomcat serveren
+
             Connection connection = SqlConnection.getConnection();
             System.out.println("der er forbindelse til databasen");
             PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO Konsultationer(CPR,Dato, Tid, Konsultationstype, Konsultationsvarighed, Notat) VALUES(?,?,?,?,?,?)");
-            preparedStatement.setString(1, req.getParameter("cprnummer"));
-            preparedStatement.setString(2, req.getParameter("datonummer"));
-            preparedStatement.setString(3, req.getParameter("klokkeslet"));
-            preparedStatement.setString(4, req.getParameter("type"));
-            preparedStatement.setString(5, req.getParameter("varighed"));
-            preparedStatement.setString(6, req.getParameter("notat"));
+            preparedStatement.setString(1, konsultationDTO.getCPR());
+            preparedStatement.setString(2, konsultationDTO.getDato());
+            preparedStatement.setString(3, konsultationDTO.getTid());
+            preparedStatement.setString(4, konsultationDTO.getKonsultationstype());
+            preparedStatement.setString(5, konsultationDTO.getKonsultationsvarighed());
+            preparedStatement.setString(6, konsultationDTO.getNotat());
             preparedStatement.execute();
         } catch (SQLException ex) {
             ex.printStackTrace();
-        } catch (IOException ex) {
-            ex.printStackTrace();
-        } catch (ClassNotFoundException ex) {
-            ex.printStackTrace();
         }
     }
+
 }

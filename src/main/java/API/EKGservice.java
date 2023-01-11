@@ -4,6 +4,7 @@ import Business.EkgController;
 import DataAccessLayer.DTO.PatientEkgsDTO;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
+import jakarta.ws.rs.PathParam;
 import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.core.MediaType;
 
@@ -14,8 +15,11 @@ import java.util.List;
 
 public class EKGservice{
     EkgController ekgController = new EkgController();
+
+
     @GET
-    public List<PatientEkgsDTO> getEkg(){
-        return null;
+    @Path("{cpr}")
+    public List<PatientEkgsDTO> getEkg(@PathParam("cpr") String cpr){
+        return ekgController.getEkg(cpr);
    }
 }

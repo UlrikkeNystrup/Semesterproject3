@@ -15,7 +15,7 @@ import java.sql.SQLException;
 public class RegisterKonsServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        PrintWriter pw = resp.getWriter();
+        //PrintWriter pw = resp.getWriter();
         //sætter content type
         resp.setContentType("text/html");
         //henter værdier fra opret ny konsultation formen
@@ -49,7 +49,7 @@ public class RegisterKonsServlet extends HttpServlet {
             e.printStackTrace();
         }
         //lukker streamen
-        pw.close();
+        //pw.close();
         resp.sendRedirect("OpretKonsultation.html");
     }
 }

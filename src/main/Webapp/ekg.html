@@ -9,7 +9,26 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <script>
-    function getekg(){
+    async function hentEKG(){
+        const res = await  fetch("rest/ekg/0607991234"); //Using dummy CPR
+        const json = await res.json(); //Conversion to json;
+        alert(JSON.stringify(json)) //Just checking what came back
+        //Lets draw some
+        const ekg = json[0]; //Take first EKG on list
+        console.log(ekg) //log the ekg
+        const samples = ekg.samples // Getting ekg samples
+        console.log(samples) //See if we got some samples
+        const context = document.getElementById("mycanvas").getContext("2d");
+        context.beginPath()
+        for(let i=0;i<samples.length;i++){
+            const sample = samples[i];
+            console.log("sample: " + sample)
+            context.lineTo(sample[0], sample[1]);
+        }
+        context.stroke();
+    }
+
+   /* function getekg(){
         fetch("rest/ekg").then(
             function(res){
                 res.json().then(
@@ -40,13 +59,16 @@
                 )
             }
         )
-    }
+    }*/
 </script>
-<button onclick="getekg()">
+<button onclick="hentEKG()">Hent nogle EKG data</button>
+<canvas id="mycanvas" width="100" height="100"></canvas>
+
+<!--<button onclick="getekg()">
     tryk på mig
 </button>
 <canvas id="myCanvas" width="200" height="100" style="border:1px solid #d3d3d3;">
-</canvas>
+</canvas>-->
 
 
 </body>

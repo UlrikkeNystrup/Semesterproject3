@@ -15,4 +15,6 @@ public class KonsultationsController {
     public void save(KonsultationDTO konsultation) {
         konsultationDAO.saveKonsultation(konsultation);
     }
+
+    //public List<KonsultationDTO> hent(KonsultationDTO konsultationDTO) {konsultationDAO.getKonsultation(cpr);}
 }

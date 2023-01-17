@@ -7,6 +7,6 @@ public class PatientEkgsDAOTest {
     @Test
     void testGetEkg() throws SQLException {
         PatientEkgsDAO ekgDaoTest = new PatientEkgsDAO();
-        System.out.println(ekgDaoTest.getEkg("1110109996"));
+        System.out.println(ekgDaoTest.getEkg("0607991234"));
     }
 }

@@ -16,7 +16,6 @@ import java.util.List;
 public class EKGservice{
     EkgController ekgController = new EkgController();
 
-
     @GET
     @Path("{cpr}")
     public List<PatientEkgsDTO> getEkg(@PathParam("cpr") String cpr){

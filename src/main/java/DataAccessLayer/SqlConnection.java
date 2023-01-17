@@ -1,6 +1,7 @@
 package DataAccessLayer;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 //vores klasse der skaber forbindelse til databasen
@@ -20,6 +21,8 @@ public class SqlConnection {
                 Class.forName("com.mysql.jdbc.Driver"); //nødvendigt for at det virker på Tomcat serveren
                 connection = DriverManager.getConnection("jdbc:mysql://db.caprover.diplomportal.dk/s215849?"
                         + "user=s215849&password=VZQM7OAP0CnLXTZ4rqYgw");
+                PreparedStatement preparedStatement = connection.prepareStatement("SET SQL_SAFE_UPDATES=0");
+                preparedStatement.execute();
             }
         } catch (SQLException e) {
             e.printStackTrace();

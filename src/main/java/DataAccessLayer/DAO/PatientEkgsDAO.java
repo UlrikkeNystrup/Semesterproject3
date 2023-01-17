@@ -11,11 +11,14 @@ public class PatientEkgsDAO {
     public List<PatientEkgsDTO> getEkg(String cpr){
         List<PatientEkgsDTO> data = new ArrayList<>();
         Connection connection = SqlConnection.getConnection();
+        System.out.println(cpr);
         try {
             PreparedStatement preparedStatement1 = connection.prepareStatement("SELECT * FROM PatientEkgs WHERE PatientEkgs.cpr =?");
             preparedStatement1.setString(1,cpr);
+            System.out.println("Query");
             ResultSet resultSet1 = preparedStatement1.executeQuery();
             while(resultSet1.next()) {
+                System.out.println("fetching");
                 PatientEkgsDTO patientEkgsDTO = new PatientEkgsDTO();
                 patientEkgsDTO.setCpr(resultSet1.getString("cpr"));
                 patientEkgsDTO.setId(resultSet1.getString("id"));

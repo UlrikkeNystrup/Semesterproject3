@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <title>Journal</title>
     <link rel="stylesheet"  href="HPStyle.css">
-
 </head>
 
 <body>
@@ -26,14 +25,8 @@
         border: 4px solid white; /* Green */
     }
 </style>
-<script>
-    async function hentKonsultationer(){
-        const cpr = localStorage.getItem("cpr")
-        const res = await  fetch("rest/konsultation/" + cpr); //Using dummy CPR
-        const json = await res.json()
-        alert(JSON.stringify(json))
-    }
-</script>
+
+
 <div class="banner">
     <div class="Container">
         <nav>
@@ -51,15 +44,15 @@
             <div class="main">
                 <h1> Journal</h1>
                 <div class="maindiv">
-                    <form action=ekg.html method="post">
+                    <form action=ekg2.html method="post">
                         <input type="submit" class="button" value="Hent EKG målinger">
                     </form>
-
                         <input type="button" class="button" value="Hent konsultationer" onclick="hentKonsultationer()">
+
+                    <div id="demo"> </div>
 
                 </div>
             </div>
-
         </div>
 
         <footer>
@@ -68,6 +61,21 @@
         </footer>
     </div>
 </div>
-
 </body>
+
+<script>
+    async function hentKonsultationer() {
+        const cpr = localStorage.getItem("cpr")
+        const response = await fetch("rest/konsultation/" + cpr); //Using localestorage CPR
+        const data = await response.json()
+        alert(JSON.stringify(data))
+        document.getElementById("demo").innerHTML ="";
+        document.getElementById("demo").innerHTML += "<br>" +"<b>" + "Gemte konsultationer for patient med cpr: " + data[0].cpr +"</b>" +"<br>";
+        for (let i=0; i<data.length;i++){
+            console.log(data[i]);
+            document.getElementById("demo").innerHTML += "<br>"+ "<p>" +"Dato: " + data[i].dato + "  Tid: " + data[i].tid +"  Konsultationstype: "+data[i].konsultationstype +"  Konsultationsvarighed: " + data[i].konsultationsvarighed + "  Notat: " + data[i].notat+ "</p>";
+        }
+    }
+</script>
+
 </html>

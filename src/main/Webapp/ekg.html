@@ -10,8 +10,8 @@
 
 <script>
     async function hentEKG(){
-        const cpr ="0607991234"
-        const res = await  fetch("rest/ekg/" + cpr); //Using dummy CPR
+        const cpr = localStorage.getItem("cpr") //bruger localestorage cpr fra hentJournal.html siden
+        const res = await  fetch("rest/ekg/" + cpr);
         const json = await res.json(); //Conversion to json;
         alert(JSON.stringify(json)) //Just checking what came back
         //Lets draw some
@@ -24,7 +24,8 @@
         for(let i=0;i<samples.length;i++){
             const sample = samples[i];
             console.log("sample: " + sample)
-            context.lineTo(sample[0], (sample[1]*1000*(-1)+200));
+            context.lineTo(sample[0], (sample[1]*1000*(-1)+600));
+            //ganger med 1000 for at få det i mv? vi ganger med -1, for at inverterer grafen + lægger noget til for at tilpasse amplituden?
         }
         context.stroke();
     }
@@ -62,8 +63,8 @@
         )
     }*/
 </script>
-<button onclick="hentEKG()">Hent nogle EKG data</button>
-<canvas id="mycanvas" width="1000" height="1000"></canvas>
+<button onclick="hentEKG()">Hent EKG målinger</button>
+<canvas id="mycanvas" width="1000" height="1000" style="border:2px solid"> </canvas>
 
 <!--<button onclick="getekg()">
     tryk på mig

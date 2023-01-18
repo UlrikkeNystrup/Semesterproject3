@@ -14,8 +14,9 @@ import java.util.List;
 public class KonsultationService {
     KonsultationsController konsultationsController = new KonsultationsController();
     @GET
-    public KonsultationDTO getKonsultation(){
-        return new KonsultationDTO();
+    @Path("{cpr}")
+    public List<KonsultationDTO> getKonsultation(@PathParam("cpr") String cpr){
+        return konsultationsController.hent(cpr);
     }
 
     @POST

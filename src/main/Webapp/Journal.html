@@ -26,7 +26,14 @@
         border: 4px solid white; /* Green */
     }
 </style>
-
+<script>
+    async function hentKonsultationer(){
+        const cpr = localStorage.getItem("cpr")
+        const res = await  fetch("rest/konsultation/" + cpr); //Using dummy CPR
+        const json = await res.json()
+        alert(JSON.stringify(json))
+    }
+</script>
 <div class="banner">
     <div class="Container">
         <nav>
@@ -44,12 +51,11 @@
             <div class="main">
                 <h1> Journal</h1>
                 <div class="maindiv">
-                    <form action=ekg2.html method="post">
+                    <form action=ekg.html method="post">
                         <input type="submit" class="button" value="Hent EKG målinger">
                     </form>
-                    <form action=Konsultationer.html method="post">
-                        <input type="submit" class="button" value="Hent konsultationer">
-                    </form>
+
+                        <input type="button" class="button" value="Hent konsultationer" onclick="hentKonsultationer()">
 
                 </div>
             </div>

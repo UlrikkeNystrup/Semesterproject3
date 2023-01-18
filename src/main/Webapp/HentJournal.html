@@ -25,6 +25,13 @@
         border: 4px solid white; /* Green */
     }
 </style>
+<script>
+    function gemPt() {
+        const cpr = document.getElementById("CPR").value;
+        localStorage.setItem("cpr",cpr);
+        window.location.href="Journal.html";
+    }
+</script>
 
 <div class="banner">
     <div class="Container">
@@ -42,11 +49,11 @@
         <div class="main">
             <h1>Hent Journal</h1>
             <div class="maindiv">
-                <form action=Journal.html method="post">
+
                     <label for="CPR">Indtast CPR-nummer:</label><br>
                     <input type="text" id="CPR" name="CPR" required><br>
-                    <input type="submit" class="button" value="Hent">
-                </form>
+                    <input type="button" class="button" value="Hent" onclick="gemPt();">
+
             </div>
 
         </div>

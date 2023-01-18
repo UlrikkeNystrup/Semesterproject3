@@ -10,7 +10,8 @@
 
 <script>
     async function hentEKG(){
-        const res = await  fetch("rest/ekg/0607991234"); //Using dummy CPR
+        const cpr ="0607991234"
+        const res = await  fetch("rest/ekg/" + cpr); //Using dummy CPR
         const json = await res.json(); //Conversion to json;
         alert(JSON.stringify(json)) //Just checking what came back
         //Lets draw some
@@ -23,7 +24,7 @@
         for(let i=0;i<samples.length;i++){
             const sample = samples[i];
             console.log("sample: " + sample)
-            context.lineTo(sample[0], sample[1]);
+            context.lineTo(sample[0], (sample[1]*1000*(-1)+200));
         }
         context.stroke();
     }
@@ -62,7 +63,7 @@
     }*/
 </script>
 <button onclick="hentEKG()">Hent nogle EKG data</button>
-<canvas id="mycanvas" width="100" height="100"></canvas>
+<canvas id="mycanvas" width="1000" height="1000"></canvas>
 
 <!--<button onclick="getekg()">
     tryk på mig

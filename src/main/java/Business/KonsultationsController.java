@@ -7,14 +7,12 @@ import java.util.List;
 
 public class KonsultationsController {
     KonsultationDAO konsultationDAO = new KonsultationDAO();
-    public List<Integer> getKonsultation() {
-        return null;
-
-    }
 
     public void save(KonsultationDTO konsultation) {
         konsultationDAO.saveKonsultation(konsultation);
     }
 
-    //public List<KonsultationDTO> hent(KonsultationDTO konsultationDTO) {konsultationDAO.getKonsultation(cpr);}
+    public List<KonsultationDTO> hent(String cpr) {
+       return konsultationDAO.getKonsultation(cpr);
+    }
 }

@@ -8,10 +8,10 @@ import java.util.List;
 public class EkgController {
     PatientEkgsDAO ekgDAO = new PatientEkgsDAO();
 
-    public List<Integer> getEkg() {
+    /*public List<Integer> getEkg() {
         return null;
 
-    }
+    }*/
 
     public List<PatientEkgsDTO> getEkg(String cpr) {
         return ekgDAO.getEkg(cpr);

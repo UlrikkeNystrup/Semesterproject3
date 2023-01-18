@@ -15,7 +15,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class KonsultationDAO {
-    public List<KonsultationDTO> getKonsultation(String cpr) throws SQLException {
+    public List<KonsultationDTO> getKonsultation(String cpr) {
         List<KonsultationDTO> data = new ArrayList<>();
         Connection connection = SqlConnection.getConnection();
         try {

@@ -58,11 +58,11 @@
 <script>
     async function hentEKG(){
         const cpr = localStorage.getItem("cpr") //bruger localestorage cpr fra hentJournal.html siden
-        const res = await  fetch("rest/ekg/" + cpr);
-        const json = await res.json(); //Conversion to json;
-        alert(JSON.stringify(json)) //Just checking what came back
+        const response = await  fetch("rest/ekg/" + cpr);
+        const data = await response.json(); //Conversion to json;
+        alert(JSON.stringify(data)) //Just checking what came back
         //Lets draw some
-        const ekg = json[0]; //Take first EKG on list
+        const ekg = data[0]; //Take first EKG on list
         console.log(ekg) //log the ekg
         const samples = ekg.samples // Getting ekg samples
         console.log(samples) //See if we got some samples

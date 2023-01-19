@@ -1,0 +1,7 @@
+POST localhost:8080/rest/konsultation
+Content-Type: application/json
+
+{"cpr": "0607991234", "dato": "2022-02-11", "tid": "10:00:00", "konsultationstype": "testType", "konsultationsvarighed":"1 time", "notat": "test2"}
+
+###
+GET localhost:8080/rest/konsultation/0607991234

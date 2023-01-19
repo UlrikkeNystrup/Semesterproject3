@@ -10,20 +10,20 @@ class KonsultationDAOTest {
     @Test
     void testGetKonsultation() throws SQLException {
         KonsultationDAO konsultationDAO = new KonsultationDAO();
-        System.out.println(konsultationDAO.getKonsultation("140892-0234"));
+        System.out.println(konsultationDAO.getKonsultation("0607991234"));
     }
 
     @Test
     void testSaveKonsultation() throws SQLException {
         KonsultationDAO konsultationDAO2 = new KonsultationDAO();
         KonsultationDTO konsultationDTO = new KonsultationDTO();
-        konsultationDTO.setCPR("1110109996");
-        konsultationDTO.setKonsultationstype("test");
-        konsultationDTO.setKonsultationsvarighed("lang tid");
-        konsultationDTO.setDato("10102001");
-        konsultationDTO.setTid("01.01");
-        konsultationDTO.setNotat("test test test");
+        konsultationDTO.setCPR("0607991234");
+        konsultationDTO.setKonsultationstype("testType");
+        konsultationDTO.setKonsultationsvarighed("TestVarighed");
+        konsultationDTO.setDato("2023-01-10");
+        konsultationDTO.setTid("10:30:00");
+        konsultationDTO.setNotat("test notat");
         konsultationDAO2.saveKonsultation(konsultationDTO);
-        //ved ikke hvad der skal stå som parameter i saveKonsultation() kaldet
+        System.out.println(konsultationDTO);
     }
 }
